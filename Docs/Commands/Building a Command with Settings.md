@@ -47,5 +47,19 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
     }
     ```
 
-5. 
+5. To create the Avalonia UserControl you will use the Avalonia Templates. If you do not have them installed locally you can do this from Terminal
+
+   ```shell
+   dotnet new install Avalonia.Templates
+   ```
+
+6. Create a new Settings UserControl. In terminal, in the same folder and the SimpleCommand.csproj file.
+
+   ```shell
+   dotnet new avalonia.usercontrol -n Settings
+   ```
+
+    This will create two files in the project folder `Settings.axaml` and `Settings.axaml.cs`
+
+7. 
 
