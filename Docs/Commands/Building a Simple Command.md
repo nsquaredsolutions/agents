@@ -37,8 +37,11 @@ In order to build a new activity for nsquared agents you will need to build a .N
 
    ```sh
    dotnet add package nsquared.agents.api --prerelease
+
    ```
+
    This will add the reference to the `SimpleCommand.csproj` file
+
    ```xml
     <ItemGroup>
       <PackageReference Include="naquared.agents.api" />
@@ -88,6 +91,7 @@ In order to build a new activity for nsquared agents you will need to build a .N
         }
     }
    ```
+
 1. Build the SimpleCommand project. It should build into the `SimpleCommand.Command` file in your logged in user `%LocalAppData%\nsquared.agents` folder.
 1. Run your nsquared agents application and it should load the new command, that will trigger with any command containing the word `simple`
 
