@@ -92,3 +92,5 @@ In order to build a new activity for nsquared agents you will need to build a .N
 1. Run your nsquared agents application and it should load the new command, that will trigger with any command containing the word `simple`
 
 ![Doing a simple command](../images/DoingSimpleCommand.png)
+
+[The full source code for this example](../../Samples/SimpleCommand/)
