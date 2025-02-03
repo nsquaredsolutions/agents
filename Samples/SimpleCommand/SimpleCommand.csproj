@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetExt>.Command</TargetExt>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="nsquared.agents.api" Version="0.0.27.9780-alpha" />
+  </ItemGroup>
+  <Target Name="PostBuildWin" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT'">
+    <Exec Command="xcopy &quot;$(OutputPath)*.*&quot; &quot;$(LocalAppData)\nsquared.agents\&quot; /E /Y /I" />
+  </Target>
+</Project>
