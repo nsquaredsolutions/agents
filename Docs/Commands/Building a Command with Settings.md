@@ -2,7 +2,7 @@
 
 This document assumes you have read and understood [Building a Simple Command](Building%20a%20Simple%20Command.md).
 
-Your custom command may need to present options to the customer of your command. This is done by extending the Settings of nsquared agents with a dialog for the command you are building.
+Your custom command may need to present options to the customer. This is done by extending the Settings of nsquared agents with a dialog for the command you are building.
 
 The user interface will need to be defined as an [Avalonia UserControl](https://docs.avaloniaui.net/docs/reference/controls/usercontrol).
 
@@ -10,19 +10,19 @@ The user interface will need to be defined as an [Avalonia UserControl](https://
 
 This guide starts with the [Simple Command built in the guide here](Building%20a%20Simple%20Command.md).
 
-1. Add the Avalonia UI package to the project. In terminal, in the same folder and the SimpleCommand.csproj file.
+1. Add the Avalonia UI package to the project. In terminal, in the same folder as the SimpleCommand.csproj file.
 
    ```shell
    dotnet add package Avalonia --version 11.2.3
    ```
 
-1. Add the Avalonia.ReactiveUI package to the project. In terminal, in the same folder and the SimpleCommand.csproj file.
+1. Add the Avalonia.ReactiveUI package to the project. In terminal, in the same folder as the SimpleCommand.csproj file.
 
    ```shell
    dotnet add package Avalonia.ReactiveUI --version 11.2.3
    ```
 
-1. Create a ViewModel class to hold the settings values. In terminal, in the same folder and the SimpleCommand.csproj file.
+1. Create a ViewModel class to hold the settings values. In terminal, in the same folder as the SimpleCommand.csproj file.
 
    ```shell
    dotnet new class -n SimpleViewModel
@@ -47,13 +47,13 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
     }
     ```
 
-1. To create the Avalonia UserControl you will use the Avalonia Templates. If you do not have them installed locally you can do this from Terminal
+1. To create the `Avalonia UserControl` you will use the Avalonia Templates. If you do not have them installed locally you can do this from terminal
 
    ```shell
    dotnet new install Avalonia.Templates
    ```
 
-1. Create a new Settings UserControl. In terminal, in the same folder and the SimpleCommand.csproj file.
+1. Create a new `SettingsControl` UserControl. In terminal, in the same folder as the SimpleCommand.csproj file.
 
    ```shell
    dotnet new avalonia.usercontrol -n SettingsControl
@@ -61,7 +61,7 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
 
     This will create two files in the project folder `SettingsControl.axaml` and `SettingsControl.axaml.cs`
 
-1. Open the `SettingsControl.axaml` file and edit it to add a `TextBox` for the `Name` property on the ViewModel.
+1. Open the `SettingsControl.axaml` file and edit it to add a `TextBox` bound to the `Name` property on the ViewModel.
 
    ```xml
    <UserControl xmlns="https://github.com/avaloniaui"
