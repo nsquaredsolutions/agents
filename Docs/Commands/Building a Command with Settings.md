@@ -118,22 +118,29 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
 1. Build the Command.
 
 1. Run the nsquared agents application and open Settings, and then go to `Manage Commands`
+
    ![Manage Commands Menu in Settings](../images/ManageCommandsMenu.png)
 
 1. If you have an older version of SimpleCommand installed then first remove it and **restart** the nsquared agents app.
+
    ![Remove SimpleCommand from Commands](../images/RemoveSimpleCommand.png)
 
-1. In the Commands select Add 
+1. In the Commands select Add
+
    ![Remove SimpleCommand from Commands](../images/AddNewCommand.png)
 
 1. Find the SimpleCommand.Command file you have built.
+
    ![Remove SimpleCommand from Commands](../images/AddSimpleCommandCommand.png)
 
 1. Restart the nsquared agents application to see the SimpleCommand settings option available in Settings screen.
+
    ![Remove SimpleCommand from Commands](../images/SimpleCommandInMenu.png)
 
 1. Select the SimpleCommand and set a name value
+
    ![Remove SimpleCommand from Commands](../images/SimpleCommandSettings.png)
 
-1. Invoke the SimpleCommand by using the keyword `simple` in your request and you will see the `Name` setting is used by the command. 
+1. Invoke the SimpleCommand by using the keyword `simple` in your request and you will see the `Name` setting is used by the command.
+
    ![Remove SimpleCommand from Commands](../images/SimpleCommandUsingSetting.png)
