@@ -6,6 +6,8 @@ Your custom command may need to present options to the customer. This is done by
 
 The user interface will need to be defined as an [Avalonia UserControl](https://docs.avaloniaui.net/docs/reference/controls/usercontrol).
 
+[The full source code for this example](../../Samples/CommandWithSettings/)
+
 ## Step-by-Step creating an nsquared agent Command with Settings
 
 This guide starts with the [Simple Command built in the guide here](Building%20a%20Simple%20Command.md).
@@ -144,3 +146,5 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
 1. Invoke the SimpleCommand by using the keyword `simple` in your request and you will see the `Name` setting is used by the command.
 
    ![Remove SimpleCommand from Commands](../images/SimpleCommandUsingSetting.png)
+
+[The full source code for this example](../../Samples/CommandWithSettings/)

@@ -2,6 +2,8 @@
 
 In order to build a new activity for nsquared agents you will need to build a .NET 8.0 assembly that contains a class that implements the [`IAgentCommand`](IAgentCommand.md) interface.
 
+[The full source code for this example](../../Samples/SimpleCommand/)
+
 ## Step-by-Step creating a simple nsquared agent Command
 
 1. Start by creating a new C# class library project named SimpleCommand.
