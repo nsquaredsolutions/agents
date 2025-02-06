@@ -48,14 +48,6 @@ In order to build a new activity for nsquared agents you will need to build a .N
     </ItemGroup>
    ```
 
-1. In the `SimpleCommand.csproj` file add a post build step to copy the command to the folder that it can be loaded from.
-
-   ```xml
-      <Target Name="PostBuildWin" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT'">
-        <Exec Command="xcopy &quot;$(OutputPath)*.*&quot; &quot;$(LocalAppData)\nsquared.agents\&quot; /E /Y /I" />
-      </Target>
-   ```
-
 1. In the `Command.cs` file add a `using` to import the `nsquared.agents` namespace
 
    ```cs
@@ -92,8 +84,21 @@ In order to build a new activity for nsquared agents you will need to build a .N
     }
    ```
 
-1. Build the SimpleCommand project. It should build into the `SimpleCommand.Command` file in your logged in user `%LocalAppData%\nsquared.agents` folder.
-1. Run your nsquared agents application and it should load the new command, that will trigger with any command containing the word `simple`
+1. Build the SimpleCommand project. It should build the `SimpleCommand.Command` file in a bin folder.
+
+1. Run the nsquared agents application and open Settings, and then go to `Manage Commands`
+
+   ![Manage Commands Menu in Settings](../images/ManageCommandsMenu.png)
+
+1. In the Commands select Add
+
+   ![Remove SimpleCommand from Commands](../images/AddNewCommand.png)
+
+1. Find the SimpleCommand.Command file you have built.
+
+   ![Remove SimpleCommand from Commands](../images/AddSimpleCommandCommand.png)
+
+1. Invoke the SimpleCommand by using the keyword `simple` in your request 
 
 ![Doing a simple command](../images/DoingSimpleCommand.png)
 
