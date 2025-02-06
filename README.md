@@ -12,14 +12,15 @@ For the characters to perform commands you will need to register, and license, t
 
 [Download from the nsquared agents product page](https://nsquared.com.au/products/agents)
 
+## Adding new commands
+
+Additional commands can be installed on the licensed version of nsquared agents.
+
+> [Instructions on building your own Command.](./Docs/Commands/Building%20a%20Simple%20Command.md)
+
 ## Adding new characters
 
 Character files can be added. You can download character (.agent) files and add them from the General Settings.
   <!-- <insert image of Add character in settings -->
 > Information on creating your own characters `coming soon`<!-- <insert link here> -->
 
-## Adding new commands
-
-Additional commands can be installed on the licensed version of nsquared agents.
-
-> [Instructions on building your own Command.](./Docs/Commands/Building%20a%20Simple%20Command.md)
