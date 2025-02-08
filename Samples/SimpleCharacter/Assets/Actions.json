@@ -1,6 +1,28 @@
 {
     "ActionItems": [
         {
+            "Name": "Show",
+            "Return": null,
+            "Frames": [
+                {
+                    "SoundEffect": null,
+                    "Duration": 10,
+                    "ExitBranch": -1,
+                    "Images": [
+                        {
+                            "Filename": "0000",
+                            "OffsetX": 0,
+                            "OffsetY": 0
+                        }
+                    ],
+                    "Mouths": [],
+                    "Branches": []
+                }
+            ],
+            "Reverse": false,
+            "ActionMenuSelected": null
+        },
+        {
             "Name": "Idle",
             "Return": null,
             "Frames": [
@@ -176,5 +198,13 @@
             "Reverse": false,
             "ActionMenuSelected": null
         }
-    ]
+    ],
+    "States": {
+        "Showing": [
+            "Show"
+        ],
+        "IdlingLevel1": [
+            "Idle"
+        ]
+    }
 }

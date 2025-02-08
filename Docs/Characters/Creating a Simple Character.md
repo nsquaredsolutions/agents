@@ -54,6 +54,21 @@ You will also need to have some images for the animated frames of the character.
     </ItemGroup>
    ```
 
+1. Add a package reference to the Avalonia NuGet package, from PowerShell you can do this with the following command.
+
+   ```sh
+   dotnet add package Avalonia
+
+   ```
+
+   This will add the reference to the `SimpleCharacter.csproj` file (the version might be different as it will pull the latest version.)
+
+   ```xml
+    <ItemGroup>
+      <PackageReference Include="Avalonia" Version="11.2.3" />
+    </ItemGroup>
+   ```
+
 1. In the SimpleCharacter folder create a new folder named `Assets`.
 1. In the new `Assets` folder create a folder named `Frames`.
 1. In the `Frames` folder copy the frame images from the [sample `Frames` folder](../../Samples/SimpleCharacter/Assets/Frames/).
@@ -62,185 +77,241 @@ You will also need to have some images for the animated frames of the character.
   
    ```json
    {
-    "ActionItems": [
-        {
-            "Name": "Idle",
-            "Return": null,
-            "Frames": [
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": -1,
-                    "Images": [
-                        {
-                            "Filename": "0000",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": -1,
-                    "Images": [
-                        {
-                            "Filename": "0045",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": -1,
-                    "Images": [
-                        {
-                            "Filename": "0046",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": 9,
-                    "Images": [
-                        {
-                            "Filename": "0047",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": 9,
-                    "Images": [
-                        {
-                            "Filename": "0048",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": -1,
-                    "Images": [
-                        {
-                            "Filename": "0049",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": [
-                        {
-                            "BranchTo": 8,
-                            "Probability": 3
-                        }
-                    ]
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 15,
-                    "ExitBranch": 8,
-                    "Images": [
-                        {
-                            "Filename": "0050",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": [
-                        {
-                            "BranchTo": 7,
-                            "Probability": 98
-                        },
-                        {
-                            "BranchTo": 6,
-                            "Probability": 2
-                        }
-                    ]
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": 9,
-                    "Images": [
-                        {
-                            "Filename": "0051",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": -1,
-                    "Images": [
-                        {
-                            "Filename": "0052",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": -1,
-                    "Images": [
-                        {
-                            "Filename": "0053",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                },
-                {
-                    "SoundEffect": null,
-                    "Duration": 10,
-                    "ExitBranch": -1,
-                    "Images": [
-                        {
-                            "Filename": "0000",
-                            "OffsetX": 0,
-                            "OffsetY": 0
-                        }
-                    ],
-                    "Mouths": [],
-                    "Branches": []
-                }
+        "ActionItems": [
+            {
+                "Name": "Show",
+                "Return": null,
+                "Frames": [
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": -1,
+                        "Images": [
+                            {
+                                "Filename": "0000",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    }
+                ],
+                "Reverse": false,
+                "ActionMenuSelected": null
+            },
+            {
+                "Name": "Idle",
+                "Return": null,
+                "Frames": [
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": -1,
+                        "Images": [
+                            {
+                                "Filename": "0000",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": -1,
+                        "Images": [
+                            {
+                                "Filename": "0045",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": -1,
+                        "Images": [
+                            {
+                                "Filename": "0046",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": 9,
+                        "Images": [
+                            {
+                                "Filename": "0047",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": 9,
+                        "Images": [
+                            {
+                                "Filename": "0048",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": -1,
+                        "Images": [
+                            {
+                                "Filename": "0049",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": [
+                            {
+                                "BranchTo": 8,
+                                "Probability": 3
+                            }
+                        ]
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 15,
+                        "ExitBranch": 8,
+                        "Images": [
+                            {
+                                "Filename": "0050",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": [
+                            {
+                                "BranchTo": 7,
+                                "Probability": 98
+                            },
+                            {
+                                "BranchTo": 6,
+                                "Probability": 2
+                            }
+                        ]
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": 9,
+                        "Images": [
+                            {
+                                "Filename": "0051",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": -1,
+                        "Images": [
+                            {
+                                "Filename": "0052",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": -1,
+                        "Images": [
+                            {
+                                "Filename": "0053",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    },
+                    {
+                        "SoundEffect": null,
+                        "Duration": 10,
+                        "ExitBranch": -1,
+                        "Images": [
+                            {
+                                "Filename": "0000",
+                                "OffsetX": 0,
+                                "OffsetY": 0
+                            }
+                        ],
+                        "Mouths": [],
+                        "Branches": []
+                    }
+                ],
+                "Reverse": false,
+                "ActionMenuSelected": null
+            }
+        ],
+        "States": {
+            "Showing": [
+                "Show"
             ],
-            "Reverse": false,
-            "ActionMenuSelected": null
+            "IdlingLevel1": [
+                "Idle"
+            ]
         }
-        ]
     }
    ```
 
-1.
+1. In the `SimpleCharacter.csproj` file add the assets as Avalonia resources
+
+   ```xml
+    <ItemGroup>
+        <AvaloniaResource Include="Assets\**" />
+    </ItemGroup>
+   ```
+
+1. Edit the `Character.cs` file to implement the [`IAgent` interface](IAgent.md).
+
+    ```cs
+    using nsquared.agents;
+    namespace SimpleCharacter;
+
+    public class Character : IAgent
+    {
+        public string Name { get => "SimpleCharacter"; set => throw new NotImplementedException(); }
+        public string AssemblyName { get => "SimpleCharacter"; set => throw new NotImplementedException(); }
+        public Uri ActionsFileUri => new Uri($"avares://{AssemblyName}/Assets/Actions.json");
+        public string AudioFilesPath => $"{Name}.Assets.Audio.";
+        public string FrameAssetPath => $"avares://{AssemblyName}/Assets/Frames/";
+        public string IconPath => $"avares://{AssemblyName}/Assets/Icon.ico";
+    }
+
+    ```
+
+1. 
