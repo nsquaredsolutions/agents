@@ -110,7 +110,7 @@ An array of Action Items. An Action Item represents an animation that the charac
 
 **BranchTo**: The index of the frame to which this branch should go.
 
-**Probability**: The probability of branching to this branch.
+**Probability**: The probability of this branch occurring on this frame.
 
 ### States
 
