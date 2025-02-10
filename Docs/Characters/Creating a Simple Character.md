@@ -73,7 +73,7 @@ You will also need to have some images for the animated frames of the character.
 1. In the new `Assets` folder create a folder named `Frames`.
 1. In the `Frames` folder copy the frame images from the [sample `Frames` folder](../../Samples/SimpleCharacter/Assets/Frames/).
 1. In the `Assets` folder create a file named `Actions.json`
-1. Edit the `Actions.json` file and put the following json to define an action.
+1. Edit the `Actions.json` file and put the following json to define two actions and two states.
   
    ```json
    {
@@ -288,6 +288,8 @@ You will also need to have some images for the animated frames of the character.
     }
    ```
 
+    [More information on the schema for the `Actions.json` file.](ActionsSchema.md)
+
 1. In the `SimpleCharacter.csproj` file add the assets as Avalonia resources
 
    ```xml
@@ -314,4 +316,18 @@ You will also need to have some images for the animated frames of the character.
 
     ```
 
+1. Build the SimpleCharacter project. It should build the `SimpleCharacter.Agent` file in a bin folder.
+
+1. Run the nsquared agents application and open Settings, and then go to the `Add` button next to the character list
+    ![Add character](../images/AddCharacter.png)
+
+1. This will open a file dialog. Find the `SimpleCharacter.Agent` file you built.
+    ![Select SimpleCharacter.Agent file](../images/SelectSimpleCharacterAgent.png)
+
+1. The new SimpleCharacter will be selected
+    ![SimpleCharacter selected](../images/SimpleCharacterSelected.png)
+
 1. 
+
+   
+
