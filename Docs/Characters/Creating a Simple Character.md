@@ -327,7 +327,4 @@ You will also need to have some images for the animated frames of the character.
 1. The new SimpleCharacter will be selected
     ![SimpleCharacter selected](../images/SimpleCharacterSelected.png)
 
-1. 
-
-   
-
+[The full source code for this example](../../Samples/SimpleCharacter/)
