@@ -10,5 +10,6 @@ The `AgentCommandType` is used to specify the type of command that the agent can
 
 See also:
 
-- [Instructions on building your own Command.](./Building%20a%20Simple%20Command.md)
-- [IAgentCommand](./IAgentCommand.md)
+> [Instructions on building your own Command.](./Building%20a%20Simple%20Command)
+
+> [IAgentCommand](./IAgentCommand)

@@ -118,4 +118,4 @@ An array of named states. Each named state contains an array of ActionItem names
 
 See also:
 
-- [Instructions on building your own character.](./Creating%20a%20Simple%20Character.md)
+> [Instructions on building your own character.](./Creating%20a%20Simple%20Character)

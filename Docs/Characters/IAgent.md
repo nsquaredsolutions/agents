@@ -13,4 +13,4 @@ This interface is used to define an animated character that renders in the nsqua
 
 See also:
 
-- [Instructions on building your own character.](./Creating%20a%20Simple%20Character.md)
+> [Instructions on building your own character.](./Creating%20a%20Simple%20Character)

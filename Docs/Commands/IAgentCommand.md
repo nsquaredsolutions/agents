@@ -16,5 +16,6 @@ A Command consists of the following files and methods.
 
 See also:
 
-- [Instructions on building your own Command.](./Building%20a%20Simple%20Command.md)
-- [AgentCommandType](./AgentCommandType.md)
+> [Instructions on building your own Command.](./Building%20a%20Simple%20Command)
+
+> [AgentCommandType](./AgentCommandType)

@@ -2,9 +2,9 @@
 
 In order to build a new character for nsquared agents you will need to build a .NET 8.0 assembly that contains a class that implements the [`IAgent`](IAgent.md) interface.
 
-You will also need to have some images for the animated frames of the character. In this example we are using a small set of images to create a simple clippy character.  These frames can be found in the [sample `Frames` folder](../../Samples/SimpleCharacter/Assets/Frames/).
+You will also need to have some images for the animated frames of the character. In this example we are using a small set of images to create a simple clippy character.  These frames can be found in the [sample `Frames` folder](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter/Assets/Frames).
 
-[The full source code for this example](../../Samples/SimpleCharacter/)
+> [The full source code for this example](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter)
 
 ## Step-by-Step creating a simple nsquared agent character
 
@@ -327,4 +327,4 @@ You will also need to have some images for the animated frames of the character.
 1. The new SimpleCharacter will be selected
     ![SimpleCharacter selected](../images/SimpleCharacterSelected.png)
 
-[The full source code for this example](../../Samples/SimpleCharacter/)
+> [The full source code for this example](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter)

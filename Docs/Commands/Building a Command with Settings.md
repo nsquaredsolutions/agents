@@ -1,16 +1,16 @@
 # Building a Command with Settings
 
-This document assumes you have read and understood [Building a Simple Command](Building%20a%20Simple%20Command.md).
+This document assumes you have read and understood [Building a Simple Command](Building%20a%20Simple%20Command).
 
 Your custom command may need to present options to the customer. This is done by extending the Settings of nsquared agents with a dialog for the command you are building.
 
 The user interface will need to be defined as an [Avalonia UserControl](https://docs.avaloniaui.net/docs/reference/controls/usercontrol).
 
-[The full source code for this example](../../Samples/CommandWithSettings/)
+> [The full source code for this example](https://github.com/nsquaredsolutions/agents/tree/main/Samples/CommandWithSettings)
 
 ## Step-by-Step creating an nsquared agent Command with Settings
 
-This guide starts with the [Simple Command built in the guide here](Building%20a%20Simple%20Command.md).
+This guide starts with the [Simple Command built in the guide here](Building%20a%20Simple%20Command).
 
 1. Add the Avalonia UI package to the project. In terminal, in the same folder as the SimpleCommand.csproj file.
 
@@ -147,4 +147,4 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
 
    ![Remove SimpleCommand from Commands](../images/SimpleCommandUsingSetting.png)
 
-[The full source code for this example](../../Samples/CommandWithSettings/)
+> [The full source code for this example](https://github.com/nsquaredsolutions/agents/tree/main/Samples/CommandWithSettings)
