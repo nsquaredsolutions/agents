@@ -2,7 +2,7 @@
 
 In order to build a new character for nsquared agents you will need to build a .NET 8.0 assembly that contains a class that implements the [`IAgent`](IAgent.md) interface.
 
-You will also need to have some images for the animated frames of the character. In this example we are using a small set of images to create a simple clippy character.  These frames can be found in the [sample `Frames` folder](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter/Assets/Frames).
+You will also need to have some images for the animated frames of the character. In this example we are using a small set of images to create a simple clippy character.  These frames can be found in the [sample **Frames** folder](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter/Assets/Frames).
 
 > [The full source code for this example](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter)
 
@@ -71,7 +71,7 @@ You will also need to have some images for the animated frames of the character.
 
 1. In the SimpleCharacter folder create a new folder named `Assets`.
 1. In the new `Assets` folder create a folder named `Frames`.
-1. In the `Frames` folder copy the frame images from the [sample `Frames` folder](../../Samples/SimpleCharacter/Assets/Frames/).
+1. In the `Frames` folder copy the frame images from the [sample **Frames** folder](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter/Assets/Frames).
 1. In the `Assets` folder create a file named `Actions.json`
 1. Edit the `Actions.json` file and put the following json to define two actions and two states.
   
