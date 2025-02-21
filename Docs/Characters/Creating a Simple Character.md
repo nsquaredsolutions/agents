@@ -319,12 +319,15 @@ You will also need to have some images for the animated frames of the character.
 1. Build the SimpleCharacter project. It should build the `SimpleCharacter.Agent` file in a bin folder.
 
 1. Run the nsquared agents application and open Settings, and then go to the `Add` button next to the character list
+
     ![Add character](../images/AddCharacter.png)
 
 1. This will open a file dialog. Find the `SimpleCharacter.Agent` file you built.
+
     ![Select SimpleCharacter.Agent file](../images/SelectSimpleCharacterAgent.png)
 
 1. The new SimpleCharacter will be selected
+
     ![SimpleCharacter selected](../images/SimpleCharacterSelected.png)
 
 > [The full source code for this example](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter)
