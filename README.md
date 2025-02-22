@@ -6,7 +6,7 @@ nsquared agents provides animated characters for your desktop. The nsquared agen
 
 ![nsquared agents image](./Docs/images/weather.png)![nsquared agents image](./Docs/images/imp.png)![nsquared agents image](./Docs/images/movie.png)![nsquared agents image](./Docs/images/pigeon.png)
 
-The free version allows you to select from characters and see the random animations.
+The free version allows you to select from characters and see their animations.
 
 For the characters to perform commands you will need to register, and license, the nsquared agents application.
 
