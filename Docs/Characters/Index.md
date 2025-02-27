@@ -6,20 +6,21 @@ The characters on this page have been built by nsquared and digitally signed so 
 
 > [Download Gamey](https://nsquaredorders.blob.core.windows.net/downloads/Gamey.Agent)
 
-[![Gamey Agent](../images/Gamey.png)](https://nsquaredorders.blob.core.windows.net/downloads/Gamey.Agent)
+[![Gamey Character](../images/Gamey.png)](https://nsquaredorders.blob.core.windows.net/downloads/Gamey.Agent)
 
 ## Merlin
 
 > [Download Merlin](https://nsquaredorders.blob.core.windows.net/downloads/Merlin.Agent)
 
-[![Merlin Agent](../images/Merlin.png)](https://nsquaredorders.blob.core.windows.net/downloads/Merlin.Agent)
+[![Merlin Character](../images/Merlin.png)](https://nsquaredorders.blob.core.windows.net/downloads/Merlin.Agent)
 
 ## Clippy
 
 > [Download Clippy](https://nsquaredorders.blob.core.windows.net/downloads/Clippy.Agent)
 
-[![Clippy Agent](../images/Clippy.png)](https://nsquaredorders.blob.core.windows.net/downloads/Clippy.Agent)
+[![Clippy Character](../images/Clippy.png)](https://nsquaredorders.blob.core.windows.net/downloads/Clippy.Agent)
 
+---
 
 ## Adding characters to nsquared agents
 
