@@ -10,8 +10,7 @@ Trigger applications and commands to run on your machine.
 
 [![OpenApp Command](../images/OpenAppCalc.png)](https://nsquaredorders.blob.core.windows.net/downloads/OpenApp.Command)
 
-Customizable so you can setup your own commands to open different applications with arguments.
-
+Customizable so you can set up your own commands to open different applications with arguments.
 [![OpenApp Command](../images/OpenApp.png)](https://nsquaredorders.blob.core.windows.net/downloads/OpenApp.Command)
 
 ---
