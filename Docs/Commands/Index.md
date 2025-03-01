@@ -8,6 +8,8 @@ The commands on this page have been built by nsquared and digitally signed so yo
 
 Trigger applications and commands to run on your machine.
 
+[![OpenApp Command](../images/OpenAppCalc.png)](https://nsquaredorders.blob.core.windows.net/downloads/OpenApp.Command)
+
 Customizable so you can setup your own commands to open different applications with arguments.
 
 [![OpenApp Command](../images/OpenApp.png)](https://nsquaredorders.blob.core.windows.net/downloads/OpenApp.Command)
