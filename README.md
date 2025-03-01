@@ -30,5 +30,4 @@ Additional commands can be installed on the licensed version of nsquared agents.
 
 > [Commands available to download](./Docs/Commands/Index)
 
-> [Instructions how to building your own Command.](./Docs/Commands/Building%20a%20Simple%20Command)
-
+> [ Instructions on how to build your own command.](./Docs/Commands/Building%20a%20Simple%20Command)
