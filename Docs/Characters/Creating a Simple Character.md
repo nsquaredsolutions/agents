@@ -1,6 +1,8 @@
 # Building a Simple Character
 
-In order to build a new character for nsquared agents you will need to build a .NET 8.0 assembly that contains a class that implements the [`IAgent`](IAgent.md) interface.
+To build a character for nsquared agents, create a .NET 10 class library with a class that
+implements the [`IAgent`](IAgent.md) interface. Install the current .NET 10 SDK and use the
+latest stable `nsquared.agents.api` NuGet package.
 
 You will also need to have some images for the animated frames of the character. In this example we are using a small set of images to create a simple clippy character.  These frames can be found in the [sample **Frames** folder](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter/Assets/Frames).
 
@@ -27,52 +29,27 @@ You will also need to have some images for the animated frames of the character.
     }
    ```
 
-1. In the `SimpleCharacter.csproj` file make sure the `TargetFramework` is `net8.0`
+1. In the `SimpleCharacter.csproj` file set the target framework and plugin file extension:
 
    ```xml
-    <TargetFramework>net8.0</TargetFramework>
-   ```
-
-1. In the `SimpleCharacter.csproj` file add a `TargetExt` field below the `TargetFramework` line
-
-   ```xml
+    <TargetFramework>net10.0</TargetFramework>
     <TargetExt>.Agent</TargetExt>
    ```
 
-1. Add a package reference to the nsquared.agents NuGet package, from PowerShell you can do this with the following command.
+1. Add the API and Avalonia packages:
 
    ```sh
-   dotnet add package nsquared.agents.api --prerelease
-
-   ```
-
-   This will add the reference to the `SimpleCharacter.csproj` file
-
-   ```xml
-    <ItemGroup>
-      <PackageReference Include="naquared.agents.api" />
-    </ItemGroup>
-   ```
-
-1. Add a package reference to the Avalonia NuGet package, from PowerShell you can do this with the following command.
-
-   ```sh
+   dotnet add package nsquared.agents.api
    dotnet add package Avalonia
-
    ```
 
-   This will add the reference to the `SimpleCharacter.csproj` file (the version might be different as it will pull the latest version.)
-
-   ```xml
-    <ItemGroup>
-      <PackageReference Include="Avalonia" Version="11.2.3" />
-    </ItemGroup>
-   ```
+   `dotnet add package` selects the latest stable package unless a version is specified.
 
 1. In the SimpleCharacter folder create a new folder named `Assets`.
 1. In the new `Assets` folder create a folder named `Frames`.
 1. In the `Frames` folder copy the frame images from the [sample **Frames** folder](https://github.com/nsquaredsolutions/agents/tree/main/Samples/SimpleCharacter/Assets/Frames).
-1. In the `Assets` folder create a file named `Actions.json`
+1. In the `Assets` folder create a file named `Actions.json`. Define the animation actions and
+   states in this file. See the [Actions.json schema](ActionsSchema.md) for the field reference.
 1. Edit the `Actions.json` file and put the following json to define two actions and two states.
   
    ```json
@@ -290,30 +267,39 @@ You will also need to have some images for the animated frames of the character.
 
     [More information on the schema for the `Actions.json` file.](ActionsSchema.md)
 
-1. In the `SimpleCharacter.csproj` file add the assets as Avalonia resources
+1. Include assets using the resource type expected by `IAgent`. Create `Assets\Audio` and add
+   `Assets\Icon.ico` if using the paths shown below:
 
    ```xml
     <ItemGroup>
         <AvaloniaResource Include="Assets\**" />
+        <AvaloniaResource Remove="Assets\Audio\**" />
+        <None Remove="Assets\Frames\**" />
+        <EmbeddedResource Include="Assets\Audio\**" />
+        <Content Include="Assets\Icon.ico" />
     </ItemGroup>
    ```
 
-1. Edit the `Character.cs` file to implement the [`IAgent` interface](IAgent.md).
+1. Edit `Character.cs` to implement [`IAgent`](IAgent.md). `WakeWord`, `Personality`, and `Voice`
+   are optional; override them to customize voice activation and AI responses for the character.
 
     ```cs
     using nsquared.agents;
+
     namespace SimpleCharacter;
 
     public class Character : IAgent
     {
-        public string Name { get => "SimpleCharacter"; set => throw new NotImplementedException(); }
-        public string AssemblyName { get => "SimpleCharacter"; set => throw new NotImplementedException(); }
-        public Uri ActionsFileUri => new Uri($"avares://{AssemblyName}/Assets/Actions.json");
+        public string Name { get; set; } = "SimpleCharacter";
+        public string AssemblyName { get; set; } = "SimpleCharacter";
+        public Uri ActionsFileUri => new($"avares://{AssemblyName}/Assets/Actions.json");
         public string AudioFilesPath => $"{Name}.Assets.Audio.";
         public string FrameAssetPath => $"avares://{AssemblyName}/Assets/Frames/";
         public string IconPath => $"avares://{AssemblyName}/Assets/Icon.ico";
+        public string WakeWord => "SimpleCharacter";
+        public string? Personality => "You are a friendly, concise desktop assistant.";
+        public string? Voice => null;
     }
-
     ```
 
 1. Build the SimpleCharacter project. It should build the `SimpleCharacter.Agent` file in a bin folder.
