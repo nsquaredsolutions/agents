@@ -276,7 +276,6 @@ You will also need to have some images for the animated frames of the character.
         <AvaloniaResource Remove="Assets\Audio\**" />
         <None Remove="Assets\Frames\**" />
         <EmbeddedResource Include="Assets\Audio\**" />
-        <Content Include="Assets\Icon.ico" />
     </ItemGroup>
    ```
 
