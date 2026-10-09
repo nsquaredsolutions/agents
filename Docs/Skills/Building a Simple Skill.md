@@ -47,15 +47,23 @@ public sealed class GreetingSkill : IAgentSkill
 
     public Task<string> ExecuteAsync(string argumentsJson)
     {
-        using var document = JsonDocument.Parse(argumentsJson);
-        if (!document.RootElement.TryGetProperty("name", out var nameElement) ||
-            nameElement.ValueKind != JsonValueKind.String ||
-            string.IsNullOrWhiteSpace(nameElement.GetString()))
+        try
         {
-            return Task.FromResult("A non-empty name is required.");
-        }
+            using var document = JsonDocument.Parse(argumentsJson);
+            if (document.RootElement.ValueKind != JsonValueKind.Object ||
+                !document.RootElement.TryGetProperty("name", out var nameElement) ||
+                nameElement.ValueKind != JsonValueKind.String ||
+                string.IsNullOrWhiteSpace(nameElement.GetString()))
+            {
+                return Task.FromResult("A non-empty name is required.");
+            }
 
-        return Task.FromResult($"Hello, {nameElement.GetString()}!");
+            return Task.FromResult($"Hello, {nameElement.GetString()}!");
+        }
+        catch (JsonException)
+        {
+            return Task.FromResult("Arguments must be valid JSON containing a non-empty string name.");
+        }
     }
 }
 ```
