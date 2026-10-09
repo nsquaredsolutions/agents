@@ -1,15 +1,16 @@
 # AgentCommandType
 
-The `AgentCommandType` is used to specify the type of command that the agent can perform. This is used to determine the order in which the command is run.
+`AgentCommandType` sets the routing order in which the application gives commands an opportunity
+to handle a request. The default `IAgentCommand.CommandType` is `GeneralPurpose`.
 
-| **Value** | **Description** |
-|----|----|
-|**KeywordLocal**|  A command that is triggered by a keyword that runs on the local computer, no network connection is required. These commands will be given a chance to run first.|
-| **KeywordOnline** | A command that is triggered by a keyword that requires a network connection to run. These commands will be given a chance to run after the KeywordLocal commands. |
-| **GeneralPurpose** | A general purpose command that is not triggered by a keyword and requires the most compute and/or network resources to run. These commands will be given a chance to run last.|
+| Value | Description |
+|---|---|
+| `KeywordLocal` | Keyword-triggered command that runs locally; tried first. |
+| `KeywordOnline` | Keyword-triggered command that needs a network connection; tried after local keyword commands. |
+| `GeneralPurpose` | General-purpose command; tried after keyword commands. |
 
 See also:
 
-> [Instructions on building your own Command.](./Building%20a%20Simple%20Command)
+> [Instructions on building your own command](Building%20a%20Simple%20Command.md).
 
-> [IAgentCommand](./IAgentCommand)
+> [IAgentCommand](IAgentCommand.md).

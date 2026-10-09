@@ -1,16 +1,24 @@
-# The IAgent Interface
+# The `IAgent` interface
 
-This interface is used to define an animated character that renders in the nsquared agents application.
+Implement `nsquared.agents.IAgent` in a .NET 10 class library to describe an animated character
+and locate its assets in the character assembly.
 
-| Field          | Type |  Description   |
-|----------------|------|----------------|
-| Name           | String | The name of the character |
-| AssemblyName   | String | The name of the assembly that contains the character |
-| ActionsFileUri | Uri   | The uri of the actions file for the character. This should be a uri that points to a json file that contains the actions that the character can perform. This file should be stored as an AvaaloniaResource in the assembly named by the AssemblyName. |
-| AudioFilesPath | String | The path to the audio files for the character. The audio files should be stored as embedded resources in the assembly named by the AssemblyName. All the audio files should be in the folder identified by this path.|
-| FrameAssetPath | String | The path to the folder containing the frames for the character. The frames should be stored as AvaloniaResources in the assembly named by the AssemblyName. All the frames should be in the folder identified by this path. |
-| IconPath | String | The path to the icon for the character. The icon should be stored as content in the assembly named by the AssemblyName. |
+| Member | Type | Description |
+|---|---|---|
+| `Name` | `string` (get/set) | Character name shown by the application. |
+| `AssemblyName` | `string` (get/set) | Assembly name used by the character's asset URIs. |
+| `ActionsFileUri` | `Uri` | URI of the character's `Actions.json`, normally an `avares://` URI to an Avalonia resource. |
+| `AudioFilesPath` | `string` | Manifest-resource prefix for audio files embedded in the assembly. |
+| `FrameAssetPath` | `string` | `avares://` URI prefix for animation frames stored as Avalonia resources. |
+| `IconPath` | `string` | URI/path for the character icon included as content in the assembly. |
+| `WakeWord` | `string` | Voice activation word. Defaults to `"agent"` when not overridden. |
+| `Personality` | `string?` | Optional personality description used by AI-powered commands to shape their responses. |
+| `Voice` | `string?` | Optional default voice for this character. `null` or empty uses the user's global voice setting. |
+
+The asset paths must match how the files are included in the project: actions and frames are
+Avalonia resources, audio is embedded, and the icon is content. The
+[simple character guide](Creating%20a%20Simple%20Character.md) shows a complete implementation.
 
 See also:
 
-> [Instructions on building your own character.](./Creating%20a%20Simple%20Character)
+> [Instructions on building your own character](Creating%20a%20Simple%20Character.md).

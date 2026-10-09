@@ -8,10 +8,11 @@ public class Command : IAgentCommand
     public bool HasSettings => false;
     public AgentCommandType CommandType => AgentCommandType.KeywordLocal;
 
-    Task<string?> IAgentCommand.Perform(string commandRequest, IAgentAnimations? animations)
+    public Task<string?> Perform(string commandRequest, IAgentAnimations? animations)
     {
         if (commandRequest.Contains("simple", StringComparison.CurrentCultureIgnoreCase))
         {
+            animations?.Animate("Announce");
             return Task.FromResult<string?>("I am doing a simple command!");
         }
         return Task.FromResult<string?>(null);
