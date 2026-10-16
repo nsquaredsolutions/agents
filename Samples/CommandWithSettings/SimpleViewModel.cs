@@ -4,7 +4,7 @@ namespace SimpleCommand;
 
 public class SimpleViewModel : ReactiveObject
 {
-    private static string name = string.Empty;
+    private string name = string.Empty;
 
     public string Name
     {

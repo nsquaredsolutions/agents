@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <TargetExt>.Command</TargetExt>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.2.3" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.3" />
-    <PackageReference Include="nsquared.agents.api" Version="0.0.27.9780-alpha" />
+    <PackageReference Include="Avalonia" Version="12.0.5" />
+    <PackageReference Include="ReactiveUI.Avalonia" Version="12.0.3" />
+    <PackageReference Include="nsquared.agents.api" Version="1.0.2" />
   </ItemGroup>
   <Target Name="PostBuildWin" AfterTargets="PostBuildEvent" Condition="'$(OS)' == 'Windows_NT'">
     <Exec Command="xcopy &quot;$(OutputPath)*.*&quot; &quot;$(LocalAppData)\nsquared.agents\&quot; /E /Y /I" />

@@ -12,16 +12,17 @@ The user interface will need to be defined as an [Avalonia UserControl](https://
 
 This guide starts with the [Simple Command built in the guide here](Building%20a%20Simple%20Command).
 
-1. Add the Avalonia UI package to the project. In terminal, in the same folder as the SimpleCommand.csproj file.
+1. Add the Avalonia UI package to the project. In terminal, in the same folder as the
+   `SimpleCommand.csproj` file:
 
    ```shell
-   dotnet add package Avalonia --version 11.2.3
+   dotnet add package Avalonia
    ```
 
-1. Add the Avalonia.ReactiveUI package to the project. In terminal, in the same folder as the SimpleCommand.csproj file.
+1. Add ReactiveUI integration for Avalonia:
 
    ```shell
-   dotnet add package Avalonia.ReactiveUI --version 11.2.3
+   dotnet add package ReactiveUI.Avalonia
    ```
 
 1. Create a ViewModel class to hold the settings values. In terminal, in the same folder as the SimpleCommand.csproj file.
@@ -39,7 +40,7 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
 
     public class SimpleViewModel : ReactiveObject
     {
-        private static string name = string.Empty;
+        private string name = string.Empty;
 
         public string Name
         {
@@ -70,7 +71,9 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:vm="using:SimpleCommand"
       mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+      x:DataType="vm:SimpleViewModel"
       x:Class="SimpleCommand.SettingsControl">
       <Grid VerticalAlignment="Top" HorizontalAlignment="Left">
          <StackPanel Width="160">
@@ -91,11 +94,12 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
    }
    ```
 
-1. In the `Command.cs` file add a static field for the ViewModel and use it to return the UserControl in the `SettingsControl` property.
+1. In `Command.cs`, keep one ViewModel instance for the command so edits made in the settings
+   control are the values read by `Perform`.
 
    ```cs
-   private static SimpleViewModel ViewModel => new();
-   public object SettingsControl => new SettingsControl(ViewModel);
+   private readonly SimpleViewModel viewModel = new();
+   public object? SettingsControl => new SettingsControl(viewModel);
    ```
 
 1. Change the `HasSettings` property to return true.
@@ -107,11 +111,11 @@ This guide starts with the [Simple Command built in the guide here](Building%20a
 1. Edit the `Perform` method to use the `Name` property of the ViewModel.
 
    ```cs
-   Task<string?> IAgentCommand.Perform(string commandRequest, IAgentAnimations? animations)
+   public Task<string?> Perform(string commandRequest, IAgentAnimations? animations)
     {
         if (commandRequest.Contains("simple", StringComparison.CurrentCultureIgnoreCase))
         {
-            return Task.FromResult<string?>($"hello {ViewModel.Name} I am doing a simple command!");
+            return Task.FromResult<string?>($"hello {viewModel.Name} I am doing a simple command!");
         }
         return Task.FromResult<string?>(null);
     }

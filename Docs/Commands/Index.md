@@ -2,6 +2,8 @@
 
 The commands on this page have been built by nsquared and digitally signed so you know you can safely add them to your nsquared agents application.
 
+Commands can also provide [skills](../Skills/Index.md) that an LLM host can call as tools.
+
 ## OpenApp
 
 > [Download OpenApp](https://nsquaredorders.blob.core.windows.net/downloads/OpenApp.Command)
@@ -28,3 +30,11 @@ Customizable so you can set up your own commands to open different applications 
 1. Find the .Command file you have downloaded.
 
    ![Add Command from file](../images/AddSimpleCommandCommand.png)
+
+## Build your own command
+
+> [Build a simple command](Building%20a%20Simple%20Command.md)
+
+> [Add a settings control](Building%20a%20Command%20with%20Settings.md)
+
+> [Build an LLM-callable skill](../Skills/Building%20a%20Simple%20Skill.md)
